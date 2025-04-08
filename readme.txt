@@ -3,7 +3,7 @@ Contributors: rafaucau
 Donate link: https://github.com/android-com-pl/oembed-infogram?sponsor=1
 Tags: Infogram, oEmbed, AMP, Gutenberg
 Requires at least: 5.9
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPL v3
