@@ -1,14 +1,14 @@
 <?php
 /**
  * @wordpress-plugin
- * Plugin Name:       oEmbed Infogram
- * Description:       A simple plugin that adds support for embedding Infogram.
- * Version:           1.2.0
- * Plugin URI:        https://github.com/android-com-pl/oembed-infogram
- * Author:            android.com.pl
- * Author URI:        https://android.com.pl/
- * License:           GPL v3
- * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+ * Plugin Name: oEmbed Infogram
+ * Description: A simple plugin that adds support for embedding Infogram.
+ * Version: 1.2.0
+ * Plugin URI: https://github.com/android-com-pl/oembed-infogram
+ * Author: android.com.pl
+ * Author URI: https://android.com.pl/
+ * License: GPL v3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 namespace ACP\oEmbed;
