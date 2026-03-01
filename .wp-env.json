@@ -1,7 +1,9 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/wp-env.json",
   "phpVersion": "7.4",
   "plugins": [
     ".",
     "https://downloads.wordpress.org/plugin/amp.zip"
-  ]
+  ],
+  "testsEnvironment": false
 }
