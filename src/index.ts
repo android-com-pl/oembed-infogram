@@ -6,7 +6,7 @@ import { chartBar } from '@wordpress/icons';
 domReady(() => {
   registerBlockVariation('core/embed', {
     name: 'infogram',
-    title: 'Infogram',
+    title: __('Infogram Embed', 'oembed-infogram'),
     icon: chartBar,
     description: __(
       'Embed an interactive chart or infographic from Infogram.',

@@ -3,7 +3,7 @@
  * @wordpress-plugin
  * Plugin Name: oEmbed Infogram
  * Description: A simple plugin that adds support for embedding Infogram.
- * Version: 1.3.0
+ * Version: 1.3.1
  * Requires at least: 5.9
  * Requires PHP: 7.4
  * Plugin URI: https://github.com/android-com-pl/oembed-infogram
@@ -47,6 +47,7 @@ class Infogram {
 			$asset['version'],
 			true
 		);
+		wp_set_script_translations( 'oembed-infogram-block-editor', 'oembed-infogram' );
 	}
 
 	/** @see https://amp-wp.org/documentation/playbooks/custom-embed-handler/ */
