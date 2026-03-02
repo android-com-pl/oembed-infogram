@@ -16,13 +16,13 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 	}
 
 	public function filter_embed_oembed_html( $cache, string $url, array $attr ) {
-		$parsedUrl = wp_parse_url( $url );
+		$parsed_url = wp_parse_url( $url );
 
-		if ( ! isset( $parsedUrl['host'], $parsedUrl['path'] ) ) {
+		if ( ! isset( $parsed_url['host'], $parsed_url['path'] ) ) {
 			return $cache;
 		}
 
-		if ( str_contains( $parsedUrl['host'], 'infogram.com' ) ) {
+		if ( str_contains( $parsed_url['host'], 'infogram.com' ) ) {
 			if ( empty( $attr['height'] ) ) {
 				return $cache;
 			}
@@ -54,7 +54,7 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 		return $cache;
 	}
 
-	protected function get_infogram_id_from_html( string $html ) {
+	protected function get_infogram_id_from_html( string $html ): string {
 		$dom = new DOMDocument();
 		@$dom->loadHTML( $html );
 		$div = $dom->getElementsByTagName( 'div' )->item( 0 );

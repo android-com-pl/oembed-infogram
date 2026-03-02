@@ -1,0 +1,19 @@
+{
+  "name": "acpl/oembed-infogram",
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.3"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "analyse:phpcs": "phpcs -s",
+    "format": "phpcbf"
+  }
+}
