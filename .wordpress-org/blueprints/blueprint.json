@@ -9,5 +9,11 @@
   "features": {
     "networking": true
   },
-  "login": true
+  "login": true,
+  "steps": [
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; wp_update_post(['ID' => 1, 'post_content' => '<!-- wp:embed {\"providerNameSlug\":\"infogram\",\"responsive\":true} /-->']);"
+    }
+  ]
 }
