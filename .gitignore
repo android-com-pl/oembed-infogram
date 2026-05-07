@@ -3,4 +3,3 @@ vendor
 node_modules
 build
 .wp-env.override.json
-composer.lock
