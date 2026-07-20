@@ -8,15 +8,26 @@
     "format:check": "oxfmt --check"
   },
   "dependencies": {
-    "@wordpress/icons": "^14.0.0",
-    "@wordpress/scripts": "^32.4.0",
-    "typescript": "^6.0.3"
+    "@wordpress/icons": "^15.2.0",
+    "@wordpress/scripts": "^33.0.0",
+    "typescript": "^7.0.2"
   },
   "devDependencies": {
-    "@wordpress/blocks": "^15.21.0",
-    "@wordpress/dom-ready": "^4.48.0",
-    "@wordpress/i18n": "^6.21.0",
-    "oxfmt": "^0.55.0"
+    "@wordpress/blocks": "^15.24.0",
+    "@wordpress/dom-ready": "^4.51.0",
+    "@wordpress/i18n": "^6.24.0",
+    "oxfmt": "^0.59.0"
   },
-  "packageManager": "pnpm@11.7.0"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=11.15.1 <12.0.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=24.18.0",
+      "onFail": "warn"
+    }
+  }
 }
