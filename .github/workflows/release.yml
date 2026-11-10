@@ -14,19 +14,19 @@ jobs:
       name: wp.org
       url: https://wp.org/plugins/${{ vars.PLUGIN_SLUG }}/
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115
-      - name: 🛠️ Setup Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        name: 📥 Install JS dependencies
         with:
-          node-version: 24
-          cache: 'pnpm'
-      - run: pnpm i --frozen-lockfile --prod
-      - run: pnpm run build
+          runtime: node@26
+          cache: true
+          install: true
+          require-lockfile: true
 
       - name: 🚀 WordPress Plugin Deploy
         id: deploy
-        uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
+        uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2 # 2.3.0
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
