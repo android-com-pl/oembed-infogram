@@ -6,6 +6,7 @@
 /node_modules/
 /src/
 /vendor/
+/wp-content/
 
 /.distignore
 /.gitignore
@@ -19,5 +20,6 @@
 /package.json
 /pnpm-lock.yaml
 /pnpm-workspace.yaml
+/phpstan.neon
 /skills-lock.json
 /tsconfig.json

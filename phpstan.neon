@@ -1,0 +1,10 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+    level: 10
+    paths:
+        - oembed-infogram.php
+        - class-amp-infogram-oembed-handler.php
+    scanDirectories:
+        - wp-content/plugins

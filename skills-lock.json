@@ -19,6 +19,12 @@
       "skillPath": "skills/wp-env/SKILL.md",
       "computedHash": "b8cc24d285c0bde15222b37dc2eeb2d427a5b0f2f766ed2333d2ee581f8c6c81"
     },
+    "wp-phpstan": {
+      "source": "WordPress/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/wp-phpstan/SKILL.md",
+      "computedHash": "19c1808bafda2f5b929b0fa899a5d3ff138d8fdf79e332056cca28fc358a4d82"
+    },
     "wp-plugin-development": {
       "source": "WordPress/agent-skills",
       "sourceType": "github",

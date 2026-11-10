@@ -7,15 +7,20 @@ use AMP_HTML_Utils;
 use DOMDocument;
 
 class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
-	public function register_embed() {
+	public function register_embed(): void {
 		add_filter( 'embed_oembed_html', [ $this, 'filter_embed_oembed_html' ], 10, 3 );
 	}
 
-	public function unregister_embed() {
+	public function unregister_embed(): void {
 		remove_filter( 'embed_oembed_html', [ $this, 'filter_embed_oembed_html' ] );
 	}
 
-	public function filter_embed_oembed_html( $cache, string $url, array $attr ) {
+	/**
+	 * @param string               $cache Cached embed HTML.
+	 * @param string               $url Embed URL.
+	 * @param array<string, mixed> $attr Embed attributes.
+	 */
+	public function filter_embed_oembed_html( string $cache, string $url, array $attr ): string {
 		$parsed_url = wp_parse_url( $url );
 
 		if ( ! isset( $parsed_url['host'], $parsed_url['path'] ) ) {
@@ -24,6 +29,11 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 
 		if ( str_contains( $parsed_url['host'], 'infogram.com' ) ) {
 			if ( empty( $attr['height'] ) ) {
+				return $cache;
+			}
+
+			$infogram_id = $this->get_infogram_id_from_html( $cache );
+			if ( $infogram_id === null || $infogram_id === '' ) {
 				return $cache;
 			}
 
@@ -36,7 +46,7 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 				$attributes['layout'] = 'responsive';
 			}
 
-			$attributes['src']             = 'https://e.infogram.com/' . $this->get_infogram_id_from_html( $cache ) . '?src=embed';
+			$attributes['src']             = 'https://e.infogram.com/' . $infogram_id . '?src=embed';
 			$attributes['sandbox']         = 'allow-scripts allow-same-origin allow-popups';
 			$attributes['resizable']       = '';
 			$attributes['allowfullscreen'] = '';
@@ -54,11 +64,13 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 		return $cache;
 	}
 
-	protected function get_infogram_id_from_html( string $html ): string {
+	protected function get_infogram_id_from_html( string $html ): ?string {
 		$dom = new DOMDocument();
-		@$dom->loadHTML( $html );
+		if ( $html === '' || ! @$dom->loadHTML( $html ) ) {
+			return null;
+		}
 		$div = $dom->getElementsByTagName( 'div' )->item( 0 );
 
-		return $div->getAttribute( 'data-id' );
+		return $div === null ? null : $div->getAttribute( 'data-id' );
 	}
 }

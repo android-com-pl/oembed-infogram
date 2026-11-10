@@ -6,10 +6,22 @@
     "ext-dom": "*"
   },
   "require-dev": {
-    "wp-coding-standards/wpcs": "^3.3"
+    "wp-coding-standards/wpcs": "^3.3",
+    "szepeviktor/phpstan-wordpress": "^2.0",
+    "wp-plugin/amp": "^2.5"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.wp-packages.org",
+      "only": [
+        "wp-plugin/*"
+      ]
+    }
+  ],
   "config": {
     "allow-plugins": {
+      "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     },
     "policy": {
@@ -19,6 +31,7 @@
     }
   },
   "scripts": {
+    "analyse:phpstan": "phpstan analyse",
     "analyse:phpcs": "phpcs -s",
     "format": "phpcbf"
   }
