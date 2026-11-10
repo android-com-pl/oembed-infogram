@@ -4,6 +4,7 @@
     "build": "wp-scripts build",
     "dev": "wp-scripts start",
     "dev:hot": "wp-scripts start --hot",
+    "typecheck": "tsc --noEmit",
     "format": "oxfmt",
     "format:check": "oxfmt --check"
   },
