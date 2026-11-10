@@ -12,10 +12,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 A simple plugin that adds support for embedding Infogram.
 
 == Description ==
-A simple plugin that adds support for embedding [Infogram](https://infogram.com/) content, compatible with [AMP](https://wordpress.org/plugins/amp/).
-Simply paste the [Infogram](https://infogram.com/) share link into the editor for automatic embedding.
+Paste an [Infogram](https://infogram.com/) share link into the WordPress editor to embed its content.
+Also supports [AMP](https://wordpress.org/plugins/amp/).
 
-Development of this plugin is conducted on [GitHub](https://github.com/android-com-pl/oembed-infogram).
+Source code is available on [GitHub](https://github.com/android-com-pl/oembed-infogram).
 
 == Changelog ==
-For the plugin’s changelog, please see [the Releases page on GitHub](https://github.com/android-com-pl/oembed-infogram/releases).
+See [releases on GitHub](https://github.com/android-com-pl/oembed-infogram/releases).
