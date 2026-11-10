@@ -29,7 +29,7 @@ class Infogram {
 	}
 
 	public static function add_provider(): void {
-		wp_oembed_add_provider( 'https://infogram.com/*', 'https://infogram.com/oembed/?format=json' );
+		wp_oembed_add_provider( '#^https?://(www\.)?infogram\.com/.+#i', 'https://infogram.com/oembed/?format=json', true );
 	}
 
 	public static function enqueue_block_editor_assets(): void {

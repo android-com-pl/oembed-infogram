@@ -27,7 +27,7 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 			return $cache;
 		}
 
-		if ( str_contains( $parsed_url['host'], 'infogram.com' ) ) {
+		if ( in_array( strtolower( $parsed_url['host'] ), [ 'infogram.com', 'www.infogram.com' ], true ) ) {
 			if ( empty( $attr['height'] ) ) {
 				return $cache;
 			}
@@ -69,8 +69,12 @@ class Infogram_Embed_Handler extends AMP_Base_Embed_Handler {
 		if ( $html === '' || ! @$dom->loadHTML( $html ) ) {
 			return null;
 		}
-		$div = $dom->getElementsByTagName( 'div' )->item( 0 );
+		foreach ( $dom->getElementsByTagName( 'div' ) as $div ) {
+			if ( $div->hasAttribute( 'data-id' ) ) {
+				return $div->getAttribute( 'data-id' );
+			}
+		}
 
-		return $div === null ? null : $div->getAttribute( 'data-id' );
+		return null;
 	}
 }
