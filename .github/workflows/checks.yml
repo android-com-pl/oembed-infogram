@@ -21,6 +21,9 @@ jobs:
           install: true
           require-lockfile: true
 
+      - name: 🎨 Formatting
+        run: pnpm format:check
+
       - name: 🔎 TypeScript
         run: pnpm typecheck
 

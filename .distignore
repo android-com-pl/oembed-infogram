@@ -9,6 +9,7 @@
 /wp-content/
 
 /.distignore
+/.gitattributes
 /.gitignore
 /.oxfmtrc.json
 /.phpcs.xml
